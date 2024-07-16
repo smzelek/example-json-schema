@@ -1,0 +1,251 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "$schema": {
+      "type": "string"
+    },
+    "AppConfigurations": {
+      "type": "object",
+      "properties": {
+        "cordova": {
+          "type": "object",
+          "properties": {
+            "CordovaPref1": {
+              "type": "string"
+            },
+            "CordovaPref2": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "CordovaPref1",
+            "CordovaPref2"
+          ]
+        },
+        "capacitor": {
+          "type": "object",
+          "properties": {
+            "loggingBehavior": {
+              "type": "string"
+            },
+            "backgroundColor": {
+              "type": "string"
+            },
+            "ios": {
+              "type": "object",
+              "properties": {
+                "appendUserAgent": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "appendUserAgent"
+              ]
+            },
+            "android": {
+              "type": "object",
+              "properties": {
+                "appendUserAgent": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "appendUserAgent"
+              ]
+            }
+          },
+          "required": [
+            "loggingBehavior",
+            "backgroundColor",
+            "ios",
+            "android"
+          ]
+        },
+        "permissions": {
+          "type": "object",
+          "properties": {
+            "ios": {
+              "type": "object",
+              "properties": {
+                "NSCameraUsageDescription": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "NSCameraUsageDescription"
+              ]
+            },
+            "android": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "required": [
+            "ios",
+            "android"
+          ]
+        }
+      },
+      "required": [
+        "cordova",
+        "capacitor",
+        "permissions"
+      ]
+    },
+    "BuildConfigurations": {
+      "type": "object",
+      "properties": {
+        "splashscreens": {
+          "type": "object"
+        },
+        "icons": {
+          "type": "object",
+          "properties": {
+            "ios": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "src": {
+                      "type": "string"
+                    },
+                    "size": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "src",
+                    "size"
+                  ]
+                }
+              ]
+            },
+            "android": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "src": {
+                      "type": "string"
+                    },
+                    "density": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "src",
+                    "density"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "ios",
+            "android"
+          ]
+        },
+        "resources": {
+          "type": "object",
+          "properties": {
+            "ios": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "_key": {
+                      "type": "string"
+                    },
+                    "src": {
+                      "type": "string"
+                    },
+                    "target": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "_key",
+                    "src",
+                    "target"
+                  ]
+                }
+              ]
+            },
+            "android": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "_key": {
+                      "type": "string"
+                    },
+                    "src": {
+                      "type": "string"
+                    },
+                    "target": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "_key",
+                    "src",
+                    "target"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "_key": {
+                      "type": "string"
+                    },
+                    "src": {
+                      "type": "string"
+                    },
+                    "target": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "_key",
+                    "src",
+                    "target"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "ios",
+            "android"
+          ]
+        }
+      },
+      "required": [
+        "splashscreens",
+        "icons",
+        "resources"
+      ]
+    }
+  },
+  "required": [
+    "version",
+    "$schema",
+    "AppConfigurations",
+    "BuildConfigurations"
+  ]
+}
